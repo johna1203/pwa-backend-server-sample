@@ -57,30 +57,12 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $response = $clientResponse->toArray();
         break;
     case 'Signature':
-        $endpoint = 'https://payments.amazon.com/';
         $params = (array)$request;
-        unset($params['action']);
-
         $string_signature = "";
         if (isset($params['stringToSign'])) {
           $string_signature = $params['stringToSign'];
           $string_signature = str_replace('____AWSAccessKeyId____', $config['access_key'], $string_signature);
         }
-
-        // POST
-        // payments.amazon.com
-        // /
-        // AWSAccessKeyId=AKIAJEJZILE2MJH7IB2Q&SignatureMethod=HmacSHA256&SignatureVersion=2&amazonOrderReferenceId=S01-1627152-3920810&authorizeAttributes.authorizationAmount.amount=49.99&authorizeAttributes.authorizationAmount.currencyCode=USD&orderTotal.amount=49.99&orderTotal.currencyCode=USD&paymentAction=AuthorizeAndCapture&sellerOrderAttributes.sellerOrderId=johna-test-001100&sellerOrderAttributes.sellerStoreName=Johna%20app%20test%20Store
-        // $params['AWSAccessKeyId'] = $config['access_key'];
-        // $params['SignatureMethod'] = 'HmacSHA256';
-        // $params['SignatureVersion'] = 2;
-        // $string_request = str_replace(
-        //   array('+', '%7E'),
-        //   array('%20', '~'),
-        //   http_build_query($params)
-        // );
-        // $parse_url = parse_url($endpoint);
-        // $string_signature = "POST\n{$parse_url["host"]}\n{$parse_url["path"]}\n$string_request";
         $signature = base64_encode(hash_hmac('sha256', $string_signature, $config['secret_key'], true));
         $response = ['signature' => $signature, 'AWSAccessKeyId' => $config['access_key'], 'string_signature'=> $string_signature];
         break;
