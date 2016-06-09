@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "1dcab9a00c9032ea3bb90a1fae97be9b",
+    "content-hash": "0e32ae6a9e39a9cf1ff41cc6f4f733b1",
+    "packages": [
+        {
+            "name": "amzn/login-and-pay-with-amazon-sdk-php",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amzn/login-and-pay-with-amazon-sdk-php.git",
+                "reference": "5449ed9706d985891d5bb59f123b8963898d0165"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amzn/login-and-pay-with-amazon-sdk-php/zipball/5449ed9706d985891d5bb59f123b8963898d0165",
+                "reference": "5449ed9706d985891d5bb59f123b8963898d0165",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PayWithAmazon\\": "PayWithAmazon/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache OSL-2"
+            ],
+            "authors": [
+                {
+                    "name": "Amazon Payments",
+                    "email": "eps-dse@amazon.com"
+                }
+            ],
+            "description": "Pay with Amazon SDK",
+            "homepage": "https://github.com/amzn/login-and-pay-with-amazon-sdk-php",
+            "keywords": [
+                "amazon",
+                "amazon payments",
+                "pay",
+                "pay with amazon",
+                "payment",
+                "payments"
+            ],
+            "time": "2016-05-13 17:25:41"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

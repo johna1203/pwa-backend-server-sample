@@ -1,0 +1,13 @@
+{
+    "name": "froeming/mobile-sdk-pwa-backend",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Johnathan Froeming",
+            "email": "froeming@amazon.co.jp"
+        }
+    ],
+    "require": {
+        "amzn/login-and-pay-with-amazon-sdk-php": "^2.0"
+    }
+}
